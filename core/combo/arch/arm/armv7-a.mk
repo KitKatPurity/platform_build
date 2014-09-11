@@ -12,5 +12,7 @@ arch_variant_cflags := \
     -mfloat-abi=softfp \
     -mfpu=vfpv3-d16
 
+ifeq ($(strip $(TARGET_CPU_VARIANT)),cortex-a8)
 arch_variant_ldflags := \
 	-Wl,--fix-cortex-a8
+endif
